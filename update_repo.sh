@@ -33,7 +33,7 @@ rm $package_directory/$db
 cp $package_directory/$db.tar.gz $package_directory/$db
 
 # Sign the package database
-${GNUPG:-gpg} --yes --local-user "${SIGN_ARCHLINUX_KEY}" --detach-sign -o "$package_directory/$db.sig" "$package_directory/$db"
+${GNUPG:-gpg} --yes --local-user "${ARCHLINUX_SIGN_KEY}" --detach-sign -o "$package_directory/$db.sig" "$package_directory/$db"
 
 for filename in "$package_directory"/qubes*.pkg.tar.zst ; do
     if ! [ -f "$filename.sig" ] ; then
