@@ -7,7 +7,7 @@ else
 fi
 MIN_AGE=7
 #DRY=echo
-REPO_CHROOT_DIR=$BUILDER_DIR/chroot-vm-Archlinux
+REPO_CHROOT_DIR=$BUILDER_DIR/chroot-vm-archlinux
 
 if [ -z "$1" ]; then
     echo "Usage: $0 <path-to-current-testing-repo-snapshot> [\"<component list>\" [<release-name>]]"
