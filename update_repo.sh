@@ -15,9 +15,11 @@ exit_update() {
 
 localdir="$(readlink -f "$(dirname "$0")")"
 name=vm-archlinux
-archlinux_directory="$localdir/$REPOS_TO_UPDATE"
+repo_type="${REPOS_TO_UPDATE#*/}"
+repo_version="${REPOS_TO_UPDATE%/*}"
+archlinux_directory="$localdir/$REPOS_TO_UPDATE/vm/archlinux"
 package_directory=$archlinux_directory/pkgs
-db=qubes.db
+db=qubes-${repo_version}-${repo_type}.db
 chroot_dir="$localdir/../../chroot-$name/"
 
 trap 'exit_update' 0 1 2 3 6 15

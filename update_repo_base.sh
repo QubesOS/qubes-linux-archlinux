@@ -11,7 +11,7 @@ REPO="$(basename "$0")"
 REPO=${REPO%.sh}
 REPO=${REPO#*-}
 
-REPOS_TO_UPDATE="$1/$REPO/vm/archlinux"
+REPOS_TO_UPDATE="$1/$REPO"
 
 # shellcheck source=update_repo.sh
 . "$LOCALDIR/update_repo.sh"
